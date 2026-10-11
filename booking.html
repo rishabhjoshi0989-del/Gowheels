@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Booking - GoWheels Car Rentals</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo">GoWheels</div>
+
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="cars.html">Cars</a></li>
+            <li><a class="active" href="booking.html">Booking</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+
+    <section class="booking-section">
+
+        <h2>Book Your Ride</h2>
+
+        <p>Fill in the details below to reserve your car</p>
+
+
+        <form class="booking-form">
+
+            <!-- Full Name and Email -->
+            <div class="row">
+
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" placeholder="Enter your full name" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" placeholder="Enter your email" required>
+                </div>
+
+            </div>
+
+
+            <!-- Phone Number and Select Car -->
+            <div class="row">
+
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <input type="tel" placeholder="Enter your phone number" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Select Car</label>
+
+                    <select required>
+                        <option value="">-- Select Car --</option>
+                        <option>BMW 5 Series</option>
+                        <option>Honda City</option>
+                        <option>Toyota Fortuner</option>
+                        <option>Mahindra Scorpio N</option>
+                        <option>Kia Seltos</option>
+                        <option>Mahindra Thar</option>
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- Gender and Driver Preference -->
+            <div class="row">
+
+                <div class="form-group">
+                    <label>Gender</label>
+
+                    <select id="gender" required onchange="setDriverPreference()">
+                        <option value="">-- Select Gender --</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+                    <label>Driver Preference</label>
+
+                    <select id="driverPreference" required>
+                        <option value="">-- Select Driver --</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- Pickup and Drop Location -->
+            <div class="row">
+
+                <div class="form-group">
+                    <label>Pickup Location</label>
+                    <input type="text" placeholder="Enter pickup location" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Drop Location</label>
+                    <input type="text" placeholder="Enter drop location" required>
+                </div>
+
+            </div>
+
+
+            <!-- Pickup Date and Time -->
+            <div class="row">
+
+                <div class="form-group">
+                    <label>Pickup Date</label>
+                    <input type="date" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Pickup Time</label>
+                    <input type="time" required>
+                </div>
+
+            </div>
+
+        </form>
+
+    </section>
+
+
+    <script>
+
+        function setDriverPreference() {
+
+            let gender = document.getElementById("gender").value;
+
+            let driverPreference =
+                document.getElementById("driverPreference");
+
+            if (gender === "Male") {
+
+                driverPreference.value = "Male";
+
+            }
+            else if (gender === "Female") {
+
+                driverPreference.value = "Female";
+
+            }
+            else {
+
+                driverPreference.value = "";
+
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>
